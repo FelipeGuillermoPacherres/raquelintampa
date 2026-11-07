@@ -7,7 +7,7 @@ import "bootstrap";
 
 
 /*---index.jsx---*/
-import IndexJSX from "./Components/Web/Home/index.jsx";
+import IndexJSX from "./Components/Web/Home/Index.jsx";
 const indexJSX = document.getElementById("index");
 if (indexJSX) {
     const { url, lang} = indexJSX.dataset;
