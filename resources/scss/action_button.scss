@@ -1,0 +1,41 @@
+.action-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.6rem;
+    border: 1px solid transparent;
+    border-radius: 0.75rem;
+    font: inherit;
+    font-weight: 600;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &--pink {
+        background-color: $rit_pink;
+        color: $rit_white;
+
+        &:hover {
+            background-color: $rit_pink-dark;
+            color: $rit_white;
+        }
+    }
+
+    &--black {
+        background-color: $rit_black;
+        color: $rit_white;
+
+        &:hover {
+            background-color: $rit_black-dark;
+            color: $rit_white;
+        }
+    }
+
+    &:focus-visible {
+        outline: 2px solid $rit_black;
+        outline-offset: 4px;
+    }
+}

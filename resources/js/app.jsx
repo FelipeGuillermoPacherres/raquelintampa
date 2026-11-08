@@ -18,3 +18,17 @@ if (indexJSX) {
         />,
     );
 }
+
+/*---header.jsx---*/
+import HeaderJSX from "./Components/Web/Layouts/Header.jsx";
+const headerJSX = document.getElementById("header");
+if (headerJSX) {
+    const { url, path, lang} = headerJSX.dataset;
+    ReactDOM.createRoot(headerJSX).render(
+        <HeaderJSX
+            url={url}
+            path={path}
+            lang={lang}
+        />,
+    );
+}

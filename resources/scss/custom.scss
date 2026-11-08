@@ -1,0 +1,387 @@
+.hero-frame {
+    height: calc(100dvh - #{$menu_mobile_height});
+    display: flex;
+    flex-direction: column;
+
+    .hero-subtitle{
+        margin-bottom: 0;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    .hero-title{
+        font-size: 7rem;
+    }
+
+    .hero-description{
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .hero-main {
+        flex: 1 1 0;
+        min-height: 0;
+        align-items: stretch;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        height: 100%;
+        min-height: 0;
+        padding-block: clamp(1rem, 3dvh, 3rem);
+        overflow-y: auto;
+    }
+
+    .hero-actions{
+        gap: 2rem;
+        .action-button{
+            font-size: 2.5rem;
+        }
+    }
+
+    .hero-whatsapp {
+        font-weight: 600;
+        font-size: 2rem;
+
+        &,
+        &:hover {
+            color: $rit_black;
+            text-decoration-color: $rit_black;
+            text-underline-offset: 4px;
+        }
+
+        i {
+            color: $rit_pink;
+        }
+
+        span {
+            color: $rit_black;
+        }
+    }
+
+    .hero-title span {
+        display: block;
+    }
+
+    .hero-image {
+        height: 100%;
+        min-height: 0;
+        aspect-ratio: auto;
+        background-size: cover;
+        background-position: 65% center;
+        background-repeat: no-repeat;
+        border-top-left-radius: 8rem;
+    }
+
+    .hero-benefits {
+        flex: 0 0 auto;
+        padding-block: 1rem;
+    }
+
+    .hero-benefits-inner {
+        padding-block: 1rem;
+        border-radius: 1rem;
+        background-color: $rit_pink-light;
+    }
+
+    .hero-benefit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: 0.5rem 1rem;
+
+        i {
+            flex-shrink: 0;
+            color: $rit_pink;
+            font-size: 2rem;
+        }
+
+        span {
+            max-width: 12rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        & + .hero-benefit {
+            border-top: 0;
+            border-left: 1px solid rgba($rit_pink, 0.4);
+        }
+    }
+
+    @media (max-width: 1199.98px) {
+        .hero-main {
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
+
+        .hero-content {
+            flex: 0 1 auto;
+            height: auto;
+            max-height: 52dvh;
+            padding-block: 1rem;
+        }
+
+        .hero-image {
+            flex: 1 1 0;
+            height: auto;
+            min-height: 0;
+            border-top-left-radius: 5rem;
+            border-top-right-radius: 5rem;
+            background-position: 85%;
+            box-shadow: 0 -11px 11px -5px rgba($rit_black, 0.25);
+        }
+
+        .hero-title {
+            font-size: clamp(1.75rem, 7vw, 2.5rem);
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+            line-height: 1.45;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+        }
+
+        .hero-actions {
+            gap: 1rem;
+            .action-button{
+                font-size: 1.25rem;
+            }
+        }
+
+        .hero-whatsapp {
+            font-size: 1rem;
+        }
+
+        .hero-benefits {
+            padding-block: 1rem;
+        }
+
+        .hero-benefits-inner {
+            padding-block: 1.1rem;
+        }
+
+        .hero-benefit {
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 0.5rem;
+            padding: 0.25rem 0.4rem;
+            text-align: center;
+
+            i {
+                font-size: 1.75rem;
+            }
+
+            span {
+                line-height: 1.3;
+            }
+        }
+    }
+}
+
+.post-op-care-frame {
+    color: $rit_black;
+
+    .post-op-inner {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: 1fr auto;
+        padding: 1rem;
+        background-color: $rit_pink-light;
+        border-radius: 1.5rem;
+    }
+
+    .post-op-content,
+    .post-op-image,
+    .post-op-action {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .post-op-content {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: center;
+    }
+
+    .post-op-subtitle {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        line-height: 1.5;
+    }
+
+    .post-op-title {
+        margin: 0 0 1.25rem;
+        font-size: clamp(2.5rem, 4vw, 4rem);
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+    }
+
+    .post-op-highlight {
+        margin-bottom: 1rem;
+        font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+        font-weight: 700;
+        line-height: 1.4;
+    }
+
+    .post-op-description {
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .post-op-benefits {
+        align-items: stretch;
+    }
+
+    .post-op-benefit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        padding: 0.5rem;
+        text-align: left;
+
+        i {
+            flex-shrink: 0;
+            color: $rit_pink;
+            font-size: 2rem;
+        }
+
+        span {
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        & + .post-op-benefit {
+            border-left: 1px solid rgba($rit_pink, 0.35);
+        }
+    }
+
+    .post-op-image {
+        grid-column: 1;
+        grid-row: 1 / 3;
+        position: relative;
+
+        img {
+            position: absolute;
+            inset: 1.5rem;
+            display: block;
+            width: calc(100% - 3rem);
+            height: calc(100% - 3rem);
+            object-fit: cover;
+            object-position: center;
+            border-radius: 1.25rem;
+        }
+    }
+
+    .post-op-action {
+        grid-column: 2;
+        grid-row: 2;
+
+        .action-button {
+            max-width: 100%;
+            gap: 0.75rem;
+            white-space: normal;
+
+            i {
+                flex-shrink: 0;
+            }
+        }
+    }
+
+    @media (max-width: 1199.98px) {
+        .post-op-inner {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+        }
+
+        .post-op-benefit {
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 0.65rem;
+            text-align: center;
+
+            i {
+                font-size: 1.75rem;
+            }
+        }
+
+        .post-op-image {
+            img {
+                position: static;
+                width: 100%;
+                height: auto;
+                aspect-ratio: 4 / 3;
+            }
+        }
+    }
+}
+
+.services-frame {
+    background-color: $rit_white;
+    color: $rit_black;
+
+    .services-heading {
+        max-width: 55rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .services-subtitle {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        line-height: 1.5;
+    }
+
+    .services-title {
+        margin: 0 0 1.25rem;
+        font-size: clamp(2.5rem, 4vw, 4rem);
+        font-weight: 600;
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+    }
+
+    .services-description {
+        margin: 0;
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+
+    .services-grid {
+        > div {
+            display: flex;
+            min-width: 0;
+        }
+    }
+
+    @media (max-width: 1199.98px) {
+        .services-heading {
+            max-width: none;
+            margin-bottom: 1.75rem;
+        }
+
+        .services-title {
+            margin-bottom: 1rem;
+        }
+
+        .services-description {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+    }
+}

@@ -5,8 +5,33 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+@import "variables.scss";
+@import "custom.scss";
+@import "header.scss";
+@import "action_button.scss";
+@import "accent_line.scss";
+@import "services_modal.scss";
+
 body{
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10+ and Edge */
     user-select: none; /* Standard syntax */
+}
+
+.main-content{
+    padding-top: $menu_desktop_height!important;
+    @include media-breakpoint-down(md){ /*--Less than 768px---*/
+        padding-top: $menu_mobile_height!important;
+    }
+}
+
+.booking-button{
+    border-radius: 0.625rem !important;
+    background-color: $rit_pink !important;
+    color: white !important;
+    font-weight: bold !important;
+
+    &:hover, &:active, &:focus{
+        background-color: $rit_pink-dark;
+    }
 }

@@ -1,0 +1,36 @@
+// Rosa principal
+$rit_pink: #F43CBE;
+$rit_pink-dark: #D923A3;  // Hover
+$rit_pink-light: #feeaf4; // Fondos suaves
+
+// Gris oscuro
+$rit_black: #373435;
+$rit_black-dark: #242223;  // Hover
+$rit_black-light: #F2F1F2; // Fondos suaves
+
+// Rosa suave
+$rit_blush: #FFD1ED;
+$rit_blush-dark: #F5ACD9;  // Hover
+$rit_blush-light: #FFF0F9; // Fondos suaves
+
+// Blanco
+$rit_white: #FEFEFE;
+$rit_white-dark: #E8E8E8;  // Hover
+$rit_white-light: #FFFFFF; // Blanco puro
+
+/*-TEXTS-*/
+.text-pink-rit{  color: $rit_pink !important; }
+.text-black-rit{  color: $rit_black !important; }
+/*-TEXTS-*/
+
+
+/*-BACKGROUNDS-*/
+.bg-gray-rit{ background-color: #F7F7F7}
+.bg-ligth-pink-rit{ background-color: $rit_blush-light}
+/*-BACKGROUNDS-*/
+
+
+/*-VARIABLES-*/
+$menu_desktop_height: 6rem;
+$menu_mobile_height: 6rem;
+/*-VARIABLES-*/
