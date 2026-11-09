@@ -36,3 +36,10 @@ body{
         background-color: $rit_pink-dark;
     }
 }
+
+@media (min-width: 1200px) {
+    .frame-shell {
+        max-width: 1320px;
+        margin-inline: auto;
+    }
+}

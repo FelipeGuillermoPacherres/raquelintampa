@@ -98,65 +98,67 @@ export default function BookingFrame({ lang = "es" }) {
             className="booking-frame p-3 p-xl-5"
             aria-labelledby="booking-title"
         >
-            <div className="row g-4 align-items-center">
-                <div className="col-12 col-xl-6">
-                    <p className="booking-subtitle">{text.subtitle}</p>
-                    <AccentLine />
-                    <h2 id="booking-title" className="booking-title">
-                        {text.title}
-                    </h2>
+            <div className={'frame-shell'}>
+                <div className="row g-4 align-items-center">
+                    <div className="col-12 col-xl-6">
+                        <p className="booking-subtitle">{text.subtitle}</p>
+                        <AccentLine />
+                        <h2 id="booking-title" className="booking-title">
+                            {text.title}
+                        </h2>
 
-                    <ol className="booking-steps list-unstyled" role="list">
-                        {text.steps.map((step, index) => (
-                            <li className="booking-step" key={step.title}>
+                        <ol className="booking-steps list-unstyled" role="list">
+                            {text.steps.map((step, index) => (
+                                <li className="booking-step" key={step.title}>
                                 <span className="booking-step-number" aria-hidden="true">
                                     {index + 1}
                                 </span>
-                                <div>
-                                    <h3>{step.title}</h3>
-                                    <p>{step.description}</p>
-                                </div>
-                            </li>
-                        ))}
-                    </ol>
-                </div>
+                                    <div>
+                                        <h3>{step.title}</h3>
+                                        <p>{step.description}</p>
+                                    </div>
+                                </li>
+                            ))}
+                        </ol>
+                    </div>
 
-                <div className="col-12 col-xl-6">
-                    <div className="booking-card">
-                        <div className="booking-card-icon-row" aria-hidden="true">
-                            <i className="fa-regular fa-calendar-days booking-card-icon" />
+                    <div className="col-12 col-xl-6">
+                        <div className="booking-card">
+                            <div className="booking-card-icon-row" aria-hidden="true">
+                                <i className="fa-regular fa-calendar-days booking-card-icon" />
+                            </div>
+                            <h3>{text.cardTitle}</h3>
+                            <p>{text.cardDescription}</p>
+
+                            {bookingUrl ? (
+                                <>
+                                    <a
+                                        className="booking-square-link"
+                                        href={bookingUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-describedby="booking-square-note"
+                                    >
+                                        <img
+                                            className="booking-square-logo"
+                                            src={SquareLogo}
+                                            alt=""
+                                        />
+                                        <span>{text.button}</span>
+                                    </a>
+                                    <small id="booking-square-note">{text.newTab}</small>
+                                </>
+                            ) : (
+                                <small>{text.unavailable}</small>
+                            )}
                         </div>
-                        <h3>{text.cardTitle}</h3>
-                        <p>{text.cardDescription}</p>
-
-                        {bookingUrl ? (
-                            <>
-                                <a
-                                    className="booking-square-link"
-                                    href={bookingUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-describedby="booking-square-note"
-                                >
-                                    <img
-                                        className="booking-square-logo"
-                                        src={SquareLogo}
-                                        alt=""
-                                    />
-                                    <span>{text.button}</span>
-                                </a>
-                                <small id="booking-square-note">{text.newTab}</small>
-                            </>
-                        ) : (
-                            <small>{text.unavailable}</small>
-                        )}
                     </div>
                 </div>
-            </div>
 
-            <div className="booking-policy">
-                <h3>{text.policyTitle}</h3>
-                <p>{text.policy}</p>
+                <div className="booking-policy">
+                    <h3>{text.policyTitle}</h3>
+                    <p>{text.policy}</p>
+                </div>
             </div>
         </section>
     );

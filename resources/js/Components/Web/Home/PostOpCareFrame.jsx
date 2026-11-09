@@ -59,58 +59,60 @@ export default function PostOpCareFrame({lang = 'es'}) {
             className="post-op-care-frame p-3 p-xl-5"
             aria-labelledby="post-op-title"
         >
-            <div className="post-op-inner row mx-0">
-                <div className="col-12 col-xl-6 post-op-content p-3 p-xl-4">
-                    <p className="post-op-subtitle">
-                        {text.subtitle}
-                    </p>
+            <div className={'frame-shell'}>
+                <div className="post-op-inner row mx-0">
+                    <div className="col-12 col-xl-6 post-op-content p-3 p-xl-4">
+                        <p className="post-op-subtitle">
+                            {text.subtitle}
+                        </p>
 
-                    <AccentLine />
+                        <AccentLine />
 
-                    <h2 id="post-op-title" className="post-op-title">
-                        {text.title}
-                        <span className="d-block">{text.btitle}</span>
-                    </h2>
+                        <h2 id="post-op-title" className="post-op-title">
+                            {text.title}
+                            <span className="d-block">{text.btitle}</span>
+                        </h2>
 
-                    <p className="post-op-highlight">
-                        {text.highlight}
-                    </p>
+                        <p className="post-op-highlight">
+                            {text.highlight}
+                        </p>
 
-                    <p className="post-op-description">
-                        {text.description}
-                    </p>
+                        <p className="post-op-description">
+                            {text.description}
+                        </p>
 
-                    <div className="post-op-benefits row mx-0">
-                        {benefits.map(({ icon, label }) => (
-                            <div
-                                className="col-4 post-op-benefit"
-                                key={icon}
-                            >
-                                <i className={icon} aria-hidden="true" />
-                                <span>{label}</span>
-                            </div>
-                        ))}
+                        <div className="post-op-benefits row mx-0">
+                            {benefits.map(({ icon, label }) => (
+                                <div
+                                    className="col-4 post-op-benefit"
+                                    key={icon}
+                                >
+                                    <i className={icon} aria-hidden="true" />
+                                    <span>{label}</span>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
 
-                <div className="col-12 col-xl-6 post-op-image p-3 p-xl-4">
-                    <img
-                        src={frameImg}
-                        alt={text.imageAlt}
-                        className="img-fluid"
-                        loading="lazy"
-                        decoding="async"
-                    />
-                </div>
-
-                <div className="col-12 col-xl-6 post-op-action p-3 p-xl-4">
-                    <ActionButton href={whatsappUrl} className="w-100">
-                        {text.button}
-                        <i
-                            className="fa-solid fa-chevron-right"
-                            aria-hidden="true"
+                    <div className="col-12 col-xl-6 post-op-image p-3 p-xl-4">
+                        <img
+                            src={frameImg}
+                            alt={text.imageAlt}
+                            className="img-fluid"
+                            loading="lazy"
+                            decoding="async"
                         />
-                    </ActionButton>
+                    </div>
+
+                    <div className="col-12 col-xl-6 post-op-action p-3 p-xl-4">
+                        <ActionButton href={whatsappUrl} className="w-100">
+                            {text.button}
+                            <i
+                                className="fa-solid fa-chevron-right"
+                                aria-hidden="true"
+                            />
+                        </ActionButton>
+                    </div>
                 </div>
             </div>
         </section>
