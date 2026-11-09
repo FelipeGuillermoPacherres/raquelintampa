@@ -44,6 +44,15 @@ export default function PostOpCareFrame({lang = 'es'}) {
         { icon: "fa-solid fa-hand-holding-heart", label: text.benefit3 },
     ];
 
+    const postOpMessage = {
+        es: "Hola, Raquel. Me interesa conocer tus paquetes de cuidado postoperatorio. ¿Podrías contarme qué opciones tienes y qué incluye cada una?",
+        en: "Hi Raquel! I’d love to learn more about your post-op care packages. Could you tell me what options you offer and what’s included in each?",
+    };
+
+    const whatsappUrl = `https://wa.me/18138932326?text=${encodeURIComponent(
+        postOpMessage[lang] ?? postOpMessage.en
+    )}`;
+
 
     return (
         <section
@@ -95,7 +104,7 @@ export default function PostOpCareFrame({lang = 'es'}) {
                 </div>
 
                 <div className="col-12 col-xl-6 post-op-action p-3 p-xl-4">
-                    <ActionButton href={'whatsappUrl'} className="w-100">
+                    <ActionButton href={whatsappUrl} className="w-100">
                         {text.button}
                         <i
                             className="fa-solid fa-chevron-right"

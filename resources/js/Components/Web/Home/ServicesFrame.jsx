@@ -55,7 +55,6 @@ export default function ServicesFrame({
                             <ServicesModal
                                 data={category}
                                 lang={lang}
-                                whatsappUrl={''}
                             />
                         </div>
                     ))}

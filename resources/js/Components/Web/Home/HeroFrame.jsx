@@ -44,8 +44,14 @@ export default function HeroFrame({url, lang = "es"}) {
         { icon: "fa-regular fa-calendar-check", label: text.benefit3 },
     ];
 
-    const bookingUrl = '';
-    const whatsappUrl = '';
+    const heroMessage = {
+        es: "Hola, Raquel. Me gustaría saber más sobre tus servicios. ¿Podrías orientarme sobre cuál sería el más adecuado para mí?",
+        en: "Hi Raquel! I’d like to learn more about your services. Could you help me figure out which one might be right for me?",
+    };
+
+    const whatsappUrl = `https://wa.me/18138932326?text=${encodeURIComponent(
+        heroMessage[lang] ?? heroMessage.en
+    )}`;
 
     return (
         <section className="hero-frame">
@@ -65,7 +71,7 @@ export default function HeroFrame({url, lang = "es"}) {
                     </p>
 
                     <div className="hero-actions d-flex flex-row flex-xl-column align-items-center align-items-xl-start flex-wrap">
-                        <ActionButton href={bookingUrl}>
+                        <ActionButton href="#booking">
                             {text.button}
                         </ActionButton>
 

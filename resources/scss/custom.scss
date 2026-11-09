@@ -394,3 +394,467 @@
         }
     }
 }
+
+.coverage-frame {
+    color: $rit_black;
+    background-color: #fefefe;
+
+    .coverage-layout {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: 1fr auto auto 1fr;
+        grid-template-areas:
+            ".       photo"
+            "copy    photo"
+            "details photo"
+            ".       photo";
+        gap: 1.5rem;
+    }
+
+    .coverage-copy {
+        grid-area: copy;
+    }
+
+    .coverage-photo {
+        grid-area: photo;
+        align-self: center;
+    }
+
+    .coverage-details {
+        grid-area: details;
+    }
+
+    .coverage-subtitle {
+        margin-bottom: 0;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        line-height: 1.5;
+    }
+
+    #coverage-title {
+        max-width: 15ch;
+        margin-bottom: 1rem;
+        font-size: clamp(2.5rem, 4vw, 4rem);
+        font-weight: 700;
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+    }
+
+    #coverage-title + p {
+        max-width: 42ch;
+        margin-bottom: 0;
+        font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+        line-height: 1.6;
+    }
+
+    .coverage-van {
+        display: block;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+    }
+
+    .coverage-areas {
+        background-color: $rit_blush-light;
+
+        h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        ul {
+            margin-bottom: 0.75rem;
+        }
+    }
+
+    .coverage-area {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.5rem 0.875rem;
+        border-radius: 999px;
+        background-color: $rit_pink-light;
+        font-weight: 600;
+
+        i {
+            color: $rit_pink-dark;
+        }
+    }
+
+    .coverage-map-button {
+        color: $rit_pink-dark;
+        font-weight: 600;
+        text-underline-offset: 0.2em;
+
+        &:hover {
+            color: $rit_black;
+        }
+    }
+
+    .coverage-action {
+        max-width: 34rem;
+        margin-inline: auto;
+
+        small {
+            line-height: 1.5;
+        }
+    }
+
+    @media (max-width: 1199.98px) {
+        .coverage-layout {
+            grid-template-columns: minmax(0, 1fr);
+            grid-template-rows: repeat(3, auto);
+            grid-template-areas:
+                "copy"
+                "photo"
+                "details";
+        }
+
+        #coverage-title {
+            max-width: 20ch;
+            font-size: 2.5rem;
+            text-wrap: balance;
+        }
+
+        #coverage-title + p {
+            max-width: 50ch;
+            font-size: 1rem;
+        }
+
+        .coverage-areas h3 {
+            font-size: 1.25rem;
+        }
+
+        .coverage-area {
+            padding: 0.375rem 0.75rem;
+            font-size: 0.875rem;
+        }
+
+        .coverage-action {
+            max-width: none;
+        }
+    }
+}
+
+.coverage-modal {
+    --coverage-modal-padding: 1.75rem;
+
+    .modal-content {
+        border: 0;
+        border-radius: 1.5rem;
+        background-color: $rit_white;
+        color: $rit_black;
+        box-shadow: 0 1rem 3rem rgba($rit_black, 0.2);
+    }
+
+    .modal-header {
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: var(--coverage-modal-padding);
+        padding-bottom: 0;
+        border-bottom: 0;
+
+        .btn-close {
+            flex-shrink: 0;
+        }
+    }
+
+    .coverage-modal-heading {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        min-width: 0;
+    }
+
+    .coverage-modal-icon {
+        display: grid;
+        flex: 0 0 3rem;
+        place-items: center;
+        height: 3rem;
+        border-radius: 0.875rem;
+        background-color: $rit_blush-light;
+        color: $rit_pink-dark;
+        font-size: 1.375rem;
+    }
+
+    .modal-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    .coverage-modal-subtitle {
+        margin: 0.375rem 0 0;
+        line-height: 1.5;
+    }
+
+    .modal-body {
+        padding: 0.25rem var(--coverage-modal-padding) 0;
+    }
+
+    .coverage-modal-figure {
+        margin: 0 0 1rem;
+
+        figcaption {
+            margin-top: 0.5rem;
+            text-align: center;
+            font-size: 0.875rem;
+            line-height: 1.4;
+        }
+    }
+
+    .coverage-modal-map {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 0.875rem;
+    }
+
+    .coverage-modal-notice {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 0.875rem 1rem;
+        border-radius: 0.875rem;
+        background-color: $rit_blush-light;
+        font-size: 0.9375rem;
+        line-height: 1.5;
+
+        i {
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+            color: $rit_pink-dark;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .modal-footer {
+        padding: 1rem var(--coverage-modal-padding)
+        var(--coverage-modal-padding);
+        border-top: 0;
+
+        > * {
+            margin: 0;
+        }
+    }
+
+    @media (max-width: 1199.98px) {
+        --coverage-modal-padding: 1rem;
+
+        .modal-content {
+            border-radius: 1.25rem;
+        }
+
+        .coverage-modal-heading {
+            gap: 0.75rem;
+        }
+
+        .coverage-modal-icon {
+            flex-basis: 2.5rem;
+            height: 2.5rem;
+            font-size: 1.125rem;
+        }
+
+        .modal-title {
+            font-size: 1.375rem;
+        }
+
+        .coverage-modal-subtitle,
+        .coverage-modal-notice {
+            font-size: 0.875rem;
+        }
+    }
+}
+
+.booking-frame {
+    color: $rit_black;
+    background-color: $rit_white;
+
+    .booking-subtitle {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        line-height: 1.5;
+    }
+
+    .booking-title {
+        max-width: 20ch;
+        margin: 0 0 1.75rem;
+        font-size: clamp(2.5rem, 4vw, 4rem);
+        font-weight: 700;
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+        text-wrap: balance;
+    }
+
+    .booking-steps {
+        display: grid;
+        gap: 1.5rem;
+        margin: 0;
+    }
+
+    .booking-step {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+
+        h3 {
+            margin: 0 0 0.25rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        p {
+            margin: 0;
+            line-height: 1.5;
+        }
+    }
+
+    .booking-step-number {
+        display: grid;
+        flex: 0 0 3.5rem;
+        place-items: center;
+        height: 3.5rem;
+        border-radius: 50%;
+        background-color: $rit_blush-light;
+        color: $rit_pink;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .booking-card,
+    .booking-policy {
+        border-radius: 1.25rem;
+        background-color: $rit_blush-light;
+    }
+
+    .booking-card {
+        padding: clamp(2rem, 4vw, 4rem);
+        text-align: center;
+
+        h3 {
+            margin: 0 0 0.75rem;
+            font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+            font-weight: 700;
+            text-wrap: balance;
+        }
+
+        p {
+            max-width: 36ch;
+            margin: 0 auto 1.5rem;
+            line-height: 1.5;
+        }
+
+        small {
+            display: block;
+            margin-top: 0.75rem;
+        }
+    }
+
+    .booking-card-icon-row {
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .booking-card-icon {
+        display: inline-block;
+        color: $rit_pink;
+        font-size: 3.5rem;
+    }
+
+    .booking-square-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        max-width: 100%;
+        min-height: 3rem;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.75rem;
+        background-color: #000;
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $rit_black-dark;
+            color: #fff;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $rit_pink-dark;
+            outline-offset: 4px;
+        }
+    }
+
+    .booking-square-logo {
+        display: block;
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 1.5rem;
+        object-fit: contain;
+        filter: none;
+    }
+
+    .booking-policy {
+        margin-top: 1.5rem;
+        padding: 1.5rem;
+
+        h3 {
+            margin: 0 0 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        p {
+            margin: 0;
+            line-height: 1.6;
+        }
+    }
+
+    .booking-brand {
+        color: $rit_pink;
+    }
+
+    @media (max-width: 1199.98px) {
+        .booking-title {
+            margin-bottom: 1.25rem;
+            font-size: 2.5rem;
+        }
+
+        .booking-steps {
+            gap: 1rem;
+        }
+
+        .booking-step {
+            gap: 0.75rem;
+
+            h3 {
+                font-size: 1.125rem;
+            }
+        }
+
+        .booking-step-number {
+            flex-basis: 2.75rem;
+            height: 2.75rem;
+            font-size: 1.25rem;
+        }
+
+        .booking-card,
+        .booking-policy {
+            padding: 1.25rem;
+        }
+
+        .booking-card-icon {
+            font-size: 2.75rem;
+        }
+
+        .booking-square-link {
+            width: 100%;
+        }
+    }
+}

@@ -5,7 +5,6 @@ import ActionButton from "../ActionButton.jsx";
 export default function ServicesModal({
   data,
   lang = "es",
-  whatsappUrl,
 }) {
     const [showModal, setShowModal] = useState(false);
     const modalTitleId = useId();
@@ -47,6 +46,20 @@ export default function ServicesModal({
 
     const hasSessions = data.hasSessions === true;
     const isPackageCategory = data.pricingType === "packages";
+
+    const whatsappMessages = hasSessions
+        ? {
+            es: `Hola, Raquel. Me interesan tus sesiones y paquetes de ${categoryName}. ¿Podrías contarme qué opciones tienes y qué incluye cada una?`,
+            en: `Hi Raquel! I’m interested in your ${categoryName} sessions and packages. Could you tell me what options you offer and what’s included?`,
+        }
+        : {
+            es: `Hola, Raquel. Me interesa uno de tus servicios de ${categoryName}. ¿Podrías darme más información?`,
+            en: `Hi Raquel! I’m interested in one of your ${categoryName} services. Could you tell me a little more about your options?`,
+        };
+
+    const serviceWhatsappUrl = `https://wa.me/18138932326?text=${encodeURIComponent(
+        whatsappMessages[currentLang]
+    )}`;
 
     const description =
         data.description?.[currentLang] ?? data.description?.en;
@@ -219,7 +232,7 @@ export default function ServicesModal({
                 <Modal.Footer className="border-0 flex-column align-items-stretch">
                     <ActionButton
                         className="services-button w-100"
-                        href={whatsappUrl}
+                        href={serviceWhatsappUrl}
                         target="_blank"
                     >
                         <i

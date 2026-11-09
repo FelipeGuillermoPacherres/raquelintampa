@@ -1,0 +1,43 @@
+.pink-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    color: $rit_pink;
+
+    &.pink-divider-bg-none {
+        background-color: transparent;
+        color: white;
+    }
+
+    .pink-divider-line {
+        flex: 1 1 0;
+        max-width: 180px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, currentColor);
+
+        &:last-child {
+            transform: rotate(180deg);
+        }
+    }
+
+    .pink-divider-logo {
+        display: block;
+        flex-shrink: 0;
+        width: 2.5rem;
+        height: auto;
+    }
+
+    @media (max-width: 1199.98px) {
+        gap: 0.75rem;
+
+        .pink-divider-line {
+            max-width: 90px;
+        }
+
+        .pink-divider-logo {
+            width: 2rem;
+        }
+    }
+}

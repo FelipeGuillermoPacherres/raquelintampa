@@ -24,7 +24,7 @@ export default function Header({url, path, lang = 'es'}) {
                     </div>
 
                     <div className="col-auto p-0 align-content-center">
-                        <a className={'btn btn-md booking-button'} href="tel:+18138932326">{bookNowButton[lang]}</a>
+                        <a className={'btn btn-md booking-button'} href="#booking">{bookNowButton[lang]}</a>
                     </div>
                 </div>
             </nav>
