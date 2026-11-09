@@ -43,3 +43,11 @@ body{
         margin-inline: auto;
     }
 }
+
+.booking-anchor {
+    scroll-margin-top: 5rem; // Ajusta a la altura del header en desktop.
+
+    @media (max-width: 1199.98px) {
+        scroll-margin-top: calc(#{$menu_mobile_height} + 0.75rem);
+    }
+}

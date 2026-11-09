@@ -19,9 +19,13 @@ export default function index({url, lang = 'es'}) {
 
             <CoverageFrame lang={lang} />
 
-            <PinkDivider />
+            <div id="booking" className="booking-anchor">
+                <PinkDivider />
 
-            <BookingFrame lang={lang} />
+                <BookingFrame lang={lang} />
+            </div>
+
+
         </>
     )
 }

@@ -94,7 +94,6 @@ export default function BookingFrame({ lang = "es" }) {
 
     return (
         <section
-            id="booking"
             className="booking-frame p-3 p-xl-5"
             aria-labelledby="booking-title"
         >
