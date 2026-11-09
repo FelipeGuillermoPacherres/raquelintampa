@@ -487,8 +487,8 @@
         font-weight: 600;
         text-underline-offset: 0.2em;
 
-        &:hover {
-            color: $rit_black;
+        &:hover, &:active, &:focus {
+            color: $rit_pink-dark !important;
         }
     }
 
