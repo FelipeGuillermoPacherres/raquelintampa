@@ -66,7 +66,7 @@ export default function HeroFrame({url, lang = "es"}) {
                         <span>{text.bhero}</span>
                     </h1>
 
-                    <p className="hero-description">
+                    <p className="hero-description pt-3 pt-xl-5">
                         {text.heroDescription}
                     </p>
 
