@@ -29,7 +29,8 @@ const frameText = {
         cardTitle: "Reserva tu cita online",
         cardDescription: "Revisa el total y el adelanto antes de confirmar.",
         button: "Reservar en Square",
-        newTab: "Se abre en una nueva pestaña.",
+        //newTab: "Se abre en una nueva pestaña.",
+        newTab: "Reservas en línea próximamente.",
         unavailable: "Las reservas online aún no están disponibles.",
         policyTitle: "Cancelaciones y cambios",
         policy: (
@@ -71,7 +72,8 @@ const frameText = {
         cardTitle: "Book your appointment online",
         cardDescription: "Review your total and deposit before you confirm.",
         button: "Book on Square",
-        newTab: "Opens in a new tab.",
+        //newTab: "Opens in a new tab.",
+        newTab: "Online booking coming soon.",
         unavailable: "Online booking isn't available yet.",
         policyTitle: "Cancellations and rescheduling",
         policy: (
@@ -131,12 +133,11 @@ export default function BookingFrame({ lang = "es" }) {
 
                             {bookingUrl ? (
                                 <>
-                                    <a
+                                    <button
+                                        type="button"
                                         className="booking-square-link"
-                                        href={bookingUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
                                         aria-describedby="booking-square-note"
+                                        disabled
                                     >
                                         <img
                                             className="booking-square-logo"
@@ -144,7 +145,7 @@ export default function BookingFrame({ lang = "es" }) {
                                             alt=""
                                         />
                                         <span>{text.button}</span>
-                                    </a>
+                                    </button>
                                     <small id="booking-square-note">{text.newTab}</small>
                                 </>
                             ) : (

@@ -13,11 +13,15 @@ export default function index({url, lang = 'es'}) {
 
             <PostOpCareFrame lang={lang} />
 
-            <ServicesFrame lang={lang} />
+            <div id="services" className="booking-anchor">
+                <ServicesFrame lang={lang} />
+            </div>
 
-            <PinkDivider />
+            <div id="coverage" className="booking-anchor">
+                <PinkDivider />
 
-            <CoverageFrame lang={lang} />
+                <CoverageFrame lang={lang} />
+            </div>
 
             <div id="booking" className="booking-anchor">
                 <PinkDivider />

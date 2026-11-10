@@ -25,7 +25,6 @@ export default function ServicesFrame({
 
     return (
         <section
-            id="services"
             className="services-frame p-3 p-xl-5"
             aria-labelledby="services-title"
         >

@@ -49,7 +49,6 @@ export default function CoverageFrame({ lang = "es"}) {
 
     return (
         <section
-            id="coverage"
             className="coverage-frame p-3 p-xl-5"
             aria-labelledby="coverage-title"
         >

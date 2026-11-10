@@ -32,3 +32,17 @@ if (headerJSX) {
         />,
     );
 }
+
+/*---footer.jsx---*/
+import FooterJSX from "./Components/Web/Layouts/Footer.jsx";
+const footerJSX = document.getElementById("footer");
+if (footerJSX) {
+    const { url, path, lang} = footerJSX.dataset;
+    ReactDOM.createRoot(footerJSX).render(
+        <FooterJSX
+            url={url}
+            path={path}
+            lang={lang}
+        />,
+    );
+}

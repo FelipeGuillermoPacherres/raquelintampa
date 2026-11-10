@@ -790,6 +790,11 @@
             outline: 2px solid $rit_pink-dark;
             outline-offset: 4px;
         }
+
+        &:disabled {
+            cursor: not-allowed;
+            opacity: 0.65;
+        }
     }
 
     .booking-square-logo {
