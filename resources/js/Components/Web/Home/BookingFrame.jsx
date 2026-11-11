@@ -91,7 +91,7 @@ const frameText = {
 };
 
 export default function BookingFrame({ lang = "es" }) {
-    const bookingUrl = 'https://www.youtube.com/';
+    const bookingUrl = 'https://book.squareup.com/appointments/affgyfnhb0cv20/location/LRGF7ZNZY7CKB/services';
     const text = frameText[lang] ?? frameText.en;
 
     return (
@@ -133,11 +133,12 @@ export default function BookingFrame({ lang = "es" }) {
 
                             {bookingUrl ? (
                                 <>
-                                    <button
-                                        type="button"
+                                    <a
                                         className="booking-square-link"
+                                        href={bookingUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         aria-describedby="booking-square-note"
-                                        disabled
                                     >
                                         <img
                                             className="booking-square-logo"
@@ -145,7 +146,7 @@ export default function BookingFrame({ lang = "es" }) {
                                             alt=""
                                         />
                                         <span>{text.button}</span>
-                                    </button>
+                                    </a>
                                     <small id="booking-square-note">{text.newTab}</small>
                                 </>
                             ) : (
