@@ -25,4 +25,12 @@ class WebController extends Controller
             'lang' => $request->session()->get('lang'),
         ]);
     }
+
+    public function booking()
+    {
+        return redirect()->away(
+            'https://book.squareup.com/appointments/affgyfnhb0cv20/location/LRGF7ZNZY7CKB/services',
+            302
+        );
+    }
 }
