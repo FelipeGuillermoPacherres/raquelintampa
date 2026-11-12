@@ -23,6 +23,7 @@
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMW0NFHP3L"></script>
+
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -32,6 +33,7 @@
     </script>
 
     <link rel="canonical" href="https://raquelintampa.com/">
+    @verbatim
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -47,8 +49,9 @@
         "https://www.instagram.com/raquelintampa/",
         "https://www.tiktok.com/@raquelintampa"
     ]
-}
+    }
     </script>
+    @endverbatim
 </head>
 <body>
 
