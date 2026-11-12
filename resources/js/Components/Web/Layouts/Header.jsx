@@ -1,5 +1,6 @@
 import React from "react";
 import imgLogo from "../../../../../public/img/logo-1.png"
+import SelectLang from "../Components/SelectLang.jsx";
 
 export default function Header({url, path, lang = 'es'}) {
     const logoTag = (
@@ -27,6 +28,7 @@ export default function Header({url, path, lang = 'es'}) {
                         <a className={'btn btn-md booking-button'} href="#booking">{bookNowButton[lang]}</a>
                     </div>
                 </div>
+                <SelectLang lang={lang} />
             </nav>
         </header>
     )

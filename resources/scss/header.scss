@@ -57,4 +57,30 @@
     }
 }
 
+.navbar-rit .select-lang-dropdown {
+    position: absolute;
+    top: 100%;
+    left: auto;
+    width: max-content;
+    z-index: 10;
+}
+
+.navbar-rit .select-lang-dropdown .select-lang-button {
+    position: static;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 16px;
+    border: 1px solid #ffd1ed;
+    border-radius: 0 0 12px 12px;
+    background: #fff;
+    color: #282829;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-rit .select-lang-button .fa-globe {
+    color: #f43cbe;
+}
+
 

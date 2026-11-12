@@ -33,4 +33,15 @@ class WebController extends Controller
             302
         );
     }
+
+    public function changeLanguage(Request $request)
+    {
+        $validated = $request->validate([
+            'lang' => ['required', 'in:es,en'],
+        ]);
+
+        $request->session()->put('lang', $validated['lang']);
+
+        return response()->json(['success' => true]);
+    }
 }

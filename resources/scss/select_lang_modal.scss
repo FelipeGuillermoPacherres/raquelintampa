@@ -1,0 +1,80 @@
+.select-lang-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 3rem;
+    z-index: 10;
+    left: auto;
+    width: max-content;
+
+    .select-lang-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+
+        background: #fff;
+        color: #282829;
+        border: 1px solid $rit_pink-light;
+        font-size: 18px;
+
+        position: static;
+        padding: 10px 16px;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.show,
+        &:active:focus {
+            background: $rit_pink-light;
+            color: #282829;
+            border-color: $rit_pink;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $rit_pink;
+            outline-offset: 3px;
+        }
+
+    }
+
+    .dropdown-menu {
+        min-width: 140px;
+        margin-top: 6px;
+        padding: 6px;
+        border: 1px solid $rit_pink-light;
+        border-radius: 12px;
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .fa-language {
+        color: $rit_pink;
+        font-size: 18px;
+    }
+
+    .dropdown-item {
+        border-radius: 8px;
+        padding: 9px 14px;
+        font-size: 18px;
+
+        &:hover,
+        &:focus {
+            background: $rit_pink-light;
+            color: #282829;
+        }
+    }
+
+    @include media-breakpoint-down(xl){ /*--Less than 1200px---*/
+        right: 1rem;
+
+        .select-lang-button {
+            font-size: 16px;
+        }
+
+        .dropdown-item {
+            font-size: 16px;
+        }
+    }
+}
+
+
