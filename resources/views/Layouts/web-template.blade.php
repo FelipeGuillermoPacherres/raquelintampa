@@ -30,6 +30,25 @@
 
         gtag('config', 'G-KMW0NFHP3L');
     </script>
+
+    <link rel="canonical" href="https://raquelintampa.com/">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://raquelintampa.com/#business",
+    "name": "Raquel in Tampa",
+    "url": "https://raquelintampa.com/",
+    "telephone": "+18138932326",
+    "image": "https://raquelintampa.com/img/og.png",
+    "logo": "https://raquelintampa.com/img/logo-1.png",
+    "sameAs": [
+        "https://www.facebook.com/raquelintampa",
+        "https://www.instagram.com/raquelintampa/",
+        "https://www.tiktok.com/@raquelintampa"
+    ]
+}
+    </script>
 </head>
 <body>
 

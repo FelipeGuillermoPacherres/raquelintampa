@@ -18,8 +18,6 @@
         name="keywords"
         content="Raquel in Tampa, salón de belleza Tampa, cabello, uñas, faciales, depilación, masajes, drenaje linfático, cuidado postoperatorio, beauty studio Tampa, hair services, nails, facials, waxing, massage, lymphatic drainage, post-op care"
     >
-
-    <link rel="canonical" href="https://raquelintampa.com/">
 @endsection
 
 @section('content')
