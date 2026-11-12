@@ -139,6 +139,11 @@ export default function BookingFrame({ lang = "es" }) {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         aria-describedby="booking-square-note"
+                                        onClick={() => {
+                                            window.gtag?.('event', 'booking_click', {
+                                                placement: 'booking_section',
+                                            });
+                                        }}
                                     >
                                         <img
                                             className="booking-square-logo"

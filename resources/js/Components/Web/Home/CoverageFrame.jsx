@@ -96,6 +96,11 @@ export default function CoverageFrame({ lang = "es"}) {
                                 href={whatsappUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                onClick={() => {
+                                    window.gtag?.('event', 'whatsapp_click', {
+                                        placement: 'coverage_modal',
+                                    });
+                                }}
                             >
                                 <i className="fa-brands fa-whatsapp" aria-hidden="true" />
                                 {text.whatsapp}

@@ -60,7 +60,14 @@ export default function FPWDModal({labelText, lang = 'es'}) {
 
     return(
         <>
-            <div className="fp-web-designs-label">
+            <div
+                className="fp-web-designs-label"
+                onMouseEnter={() => {
+                    window.gtag?.('event', 'fp_credit_hover', {
+                        placement: 'footer',
+                    });
+                }}
+            >
                     <span>
                         {labelText.fpLabel1}
                         <i className="fa-solid fa-heart text-pink-rit" aria-hidden="true" />
@@ -68,7 +75,13 @@ export default function FPWDModal({labelText, lang = 'es'}) {
                     </span>
 
                 <a
-                    onClick={() => setShowModal(true)}
+                    onClick={() => {
+                        window.gtag?.('event', 'fp_credit_click', {
+                            placement: 'footer',
+                        });
+
+                        setShowModal(true);
+                    }}
                 >
                     <img
                         src={fpWebDesignsLogo}

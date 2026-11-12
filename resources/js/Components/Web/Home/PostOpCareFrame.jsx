@@ -105,7 +105,15 @@ export default function PostOpCareFrame({lang = 'es'}) {
                     </div>
 
                     <div className="col-12 col-xl-6 post-op-action p-3 p-xl-4">
-                        <ActionButton href={whatsappUrl} className="w-100">
+                        <ActionButton
+                            href={whatsappUrl}
+                            className="w-100"
+                            onClick={() => {
+                                window.gtag?.('event', 'whatsapp_click', {
+                                    placement: 'post_op_care_frame',
+                                });
+                            }}
+                        >
                             {text.button}
                             <i
                                 className="fa-solid fa-chevron-right"

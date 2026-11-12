@@ -80,6 +80,11 @@ export default function HeroFrame({url, lang = "es"}) {
                             className="hero-whatsapp"
                             target="_blank"
                             rel="noopener noreferrer"
+                            onClick={() => {
+                                window.gtag?.('event', 'whatsapp_click', {
+                                    placement: 'hero',
+                                });
+                            }}
                         >
                             <i
                                 className="fa-brands fa-whatsapp"

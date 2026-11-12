@@ -234,6 +234,11 @@ export default function ServicesModal({
                         className="services-button w-100"
                         href={serviceWhatsappUrl}
                         target="_blank"
+                        onClick={() => {
+                            window.gtag?.('event', 'whatsapp_click', {
+                                placement: 'service_modal',
+                            });
+                        }}
                     >
                         <i
                             className="fa-brands fa-whatsapp"
