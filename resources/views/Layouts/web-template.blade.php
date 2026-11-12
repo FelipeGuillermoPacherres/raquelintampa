@@ -15,6 +15,10 @@
     <link rel="icon" href="{{ asset('img/favicon.png') }}" type="image/x-icon">
 
 
+    <!-- Vite React -->
+    @viteReactRefresh
+    @vite(['resources/scss/app.scss', 'resources/js/app.jsx'])
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMW0NFHP3L"></script>
     <script>
