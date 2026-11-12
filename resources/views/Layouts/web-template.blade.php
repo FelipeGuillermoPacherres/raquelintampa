@@ -33,13 +33,13 @@
 </head>
 <body>
 
-<div id="header" data-url="{{ url('/') }}" data-path="{{ request()->path() }}" data-lang="{{ session('lang', 'en') }}"></div>
+<div id="header" data-url="{{ url('/') }}" data-path="{{ request()->path() }}" data-lang="{{ $lang }}"></div>
 
 <section class="main-content">
     @yield('content')
 </section>
 
-<div id="footer" data-url="{{ url('/') }}" data-path="{{ request()->path() }}" data-lang="{{ session('lang', 'en') }}"></div>
+<div id="footer" data-url="{{ url('/') }}" data-path="{{ request()->path() }}" data-lang="{{ $lang }}"></div>
 
 </body>
 </html>

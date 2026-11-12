@@ -23,5 +23,5 @@
 @endsection
 
 @section('content')
-    <div id="index" data-url="{{ url('/') }}" data-lang="{{ session('lang', 'en') }}"></div>
+    <div id="index" data-url="{{ url('/') }}" data-lang="{{ $lang }}"></div>
 @endsection
