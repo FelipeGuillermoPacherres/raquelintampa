@@ -203,7 +203,7 @@
     .post-op-inner {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-rows: 1fr auto;
+        grid-template-rows: auto auto auto;
         padding: 1rem;
         background-color: $rit_pink-light;
         border-radius: 1.5rem;
@@ -211,6 +211,7 @@
 
     .post-op-content,
     .post-op-image,
+    .post-op-faq,
     .post-op-action {
         width: 100%;
         min-width: 0;
@@ -282,8 +283,9 @@
 
     .post-op-image {
         grid-column: 1;
-        grid-row: 1 / 3;
+        grid-row: 1;
         position: relative;
+        min-height: 400px;
 
         img {
             position: absolute;
@@ -297,9 +299,118 @@
         }
     }
 
-    .post-op-action {
-        grid-column: 2;
+    .post-op-faq {
+        grid-column: 1 / -1;
         grid-row: 2;
+        margin-top: 1rem;
+    }
+
+    .post-op-faq-title {
+        margin: 0 0 0.65rem;
+        font-size: clamp(1.65rem, 2.5vw, 2.5rem);
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -0.025em;
+    }
+
+    .post-op-faq-description {
+        margin: 0 0 1.5rem;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .post-op-faq-list {
+        display: grid;
+        gap: 0.85rem;
+    }
+
+    .post-op-faq-item {
+        background: #fff;
+        border-radius: 1rem;
+        overflow: hidden;
+
+        summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+
+            padding: 1.25rem 1.5rem;
+            color: $rit_black;
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.5;
+            list-style: none;
+            cursor: pointer;
+
+            &::-webkit-details-marker {
+                display: none;
+            }
+
+            &:hover {
+                color: $rit_pink;
+            }
+
+            &:focus-visible {
+                outline: 2px solid $rit_pink;
+                outline-offset: -4px;
+                border-radius: 1rem;
+            }
+        }
+    }
+
+    .post-op-faq-icon {
+        position: relative;
+        flex: 0 0 20px;
+        width: 20px;
+        height: 20px;
+        color: $rit_pink;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background: currentColor;
+            border-radius: 2px;
+            transform: translate(-50%, -50%);
+        }
+
+        &::before {
+            width: 18px;
+            height: 2px;
+        }
+
+        &::after {
+            width: 2px;
+            height: 18px;
+        }
+    }
+
+    .post-op-faq-item[open] {
+        .post-op-faq-icon::after {
+            display: none;
+        }
+    }
+
+    .post-op-faq-answer {
+        padding: 0 1.5rem 1.5rem;
+        font-size: 1rem;
+        line-height: 1.75;
+
+        p {
+            margin: 0 0 1rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .post-op-action {
+        grid-column: 1 / -1;
+        grid-row: 3;
 
         .action-button {
             max-width: 100%;
@@ -331,12 +442,27 @@
         }
 
         .post-op-image {
+            min-height: 0;
+
             img {
                 position: static;
                 width: 100%;
                 height: auto;
                 aspect-ratio: 4 / 3;
             }
+        }
+
+        .post-op-faq {
+            margin-top: 0;
+        }
+
+        .post-op-faq-item summary {
+            padding: 1rem;
+            font-size: 1rem;
+        }
+
+        .post-op-faq-answer {
+            padding: 0 1rem 1.25rem;
         }
     }
 }
@@ -861,6 +987,226 @@
 
         .booking-square-link {
             width: 100%;
+        }
+    }
+}
+
+.social-media-frame {
+    color: $rit_black;
+
+    .social-media-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        align-items: stretch;
+        gap: 3rem;
+
+        padding: 2.5rem;
+        background: $rit_pink-light;
+        border-radius: 1.5rem;
+    }
+
+    .social-media-image {
+        position: relative;
+        min-width: 0;
+        min-height: 520px;
+
+        img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            object-position: center;
+            border-radius: 5rem 1.5rem 1.5rem;
+        }
+    }
+
+    .social-media-badge {
+        position: absolute;
+        left: 1.5rem;
+        bottom: 1.5rem;
+
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+
+        max-width: calc(100% - 3rem);
+        padding: 0.75rem 1.1rem;
+        border-radius: 999px;
+        background: #fff;
+        box-shadow: 0 4px 20px rgba($rit_black, 0.08);
+
+        font-size: 1rem;
+        font-weight: 700;
+
+        i {
+            color: $rit_pink;
+            font-size: 1.25rem;
+        }
+    }
+
+    .social-media-content {
+        align-self: center;
+        min-width: 0;
+    }
+
+    .social-media-subtitle {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        line-height: 1.5;
+    }
+
+    .social-media-title {
+        margin: 0 0 1.25rem;
+        font-size: clamp(2.5rem, 4vw, 4rem);
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+
+        span {
+            display: block;
+            color: $rit_pink;
+        }
+    }
+
+    .social-media-description {
+        margin: 0 0 2rem;
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+
+    .social-media-links {
+        display: grid;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    small {
+        display: inline;
+        margin: 0;
+        font-size: 0.85rem;
+        font-weight: 400;
+        line-height: 1.4;
+    }
+
+    .social-media-link {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+
+        padding: 1.25rem 1.5rem;
+        border: 1px solid rgba($rit_pink, 0.15);
+        border-radius: 1.25rem;
+        background: #fff;
+        color: $rit_black;
+        text-decoration: none;
+
+        transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease,
+            transform 0.2s ease;
+
+        &:hover {
+            color: $rit_black;
+            border-color: $rit_pink;
+            box-shadow: 0 6px 20px rgba($rit_pink, 0.1);
+            transform: translateY(-2px);
+        }
+
+        &:focus-visible {
+            outline: 2px solid $rit_pink;
+            outline-offset: 4px;
+        }
+    }
+
+    .social-media-icon {
+        flex: 0 0 2.5rem;
+        color: $rit_pink;
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .social-media-label {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: 0.2rem;
+        min-width: 0;
+
+        strong {
+            font-size: 1.25rem;
+            line-height: 1.3;
+        }
+
+        > span {
+            font-size: 1rem;
+            line-height: 1.4;
+            overflow-wrap: anywhere;
+        }
+    }
+
+    .social-media-arrow {
+        flex-shrink: 0;
+        color: $rit_pink;
+        font-size: 1.1rem;
+    }
+
+    @media (max-width: 1199.98px) {
+        .social-media-inner {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 1.75rem;
+            padding: 1.25rem;
+        }
+
+        .social-media-image {
+            min-height: 0;
+            aspect-ratio: 4 / 3;
+
+            img {
+                object-position: center 30%;
+                border-top-left-radius: 3.5rem;
+            }
+        }
+
+        .social-media-description {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-media-link {
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .social-media-icon {
+            flex-basis: 2rem;
+            font-size: 2rem;
+        }
+
+        .social-media-label strong {
+            font-size: 1.1rem;
+        }
+
+        .social-media-badge {
+            left: 1rem;
+            bottom: 1rem;
+            max-width: calc(100% - 2rem);
+            font-size: 0.9rem;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .social-media-link {
+            transition: none;
+
+            &:hover {
+                transform: none;
+            }
         }
     }
 }

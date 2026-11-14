@@ -5,6 +5,7 @@ import ServicesFrame from "./ServicesFrame.jsx";
 import CoverageFrame from "./CoverageFrame.jsx";
 import PinkDivider from "../Components/PinkDivider.jsx";
 import BookingFrame from "./BookingFrame.jsx";
+import SocialMediaFrame from "./SocialMediaFrame.jsx";
 
 export default function index({url, lang = 'es'}) {
     return(
@@ -29,6 +30,9 @@ export default function index({url, lang = 'es'}) {
                 <BookingFrame lang={lang} />
             </div>
 
+            <PinkDivider />
+
+            <SocialMediaFrame lang={lang} />
 
         </>
     )

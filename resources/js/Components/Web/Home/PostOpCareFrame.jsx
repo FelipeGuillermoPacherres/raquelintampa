@@ -38,6 +38,79 @@ export default function PostOpCareFrame({lang = 'es'}) {
 
     const text = frameText[lang] ?? frameText.en;
 
+    const faqText = {
+        es: {
+            title: "Dudas sobre tu recuperación",
+            description:
+                "Respuestas claras para acompañarte en esta etapa.",
+            items: [
+                {
+                    id: "swelling",
+                    question:
+                        "¿Por qué sigo inflamada después de recibir 10 masajes?",
+                    paragraphs: [
+                        "La inflamación puede continuar aunque hayas completado 10 sesiones. Cada cuerpo se recupera a su propio ritmo, y el número de masajes por sí solo no determina cuándo desaparecerá.",
+                        "También influyen el tipo de cirugía, el tiempo transcurrido y los cuidados durante la recuperación. La frecuencia de las sesiones y el uso de la faja deben adaptarse a las indicaciones de tu cirujano. Si la inflamación aumenta o aparece dolor nuevo, consulta con tu equipo médico antes de continuar.",
+                    ],
+                },
+                {
+                    id: "pain",
+                    question:
+                        "¿Es normal sentir dolor durante un masaje postoperatorio?",
+                    paragraphs: [
+                        "Después de una cirugía, la piel y los tejidos pueden estar sensibles. Sin embargo, el drenaje linfático manual utiliza movimientos suaves: no necesitas soportar dolor intenso para que la sesión sea efectiva.",
+                        "Cuéntale a Raquel cómo te sientes para adaptar o detener la sesión si es necesario. No existe un número fijo de sesiones para que desaparezca la sensibilidad. Si el dolor es intenso, empeora o persiste, consulta con tu cirujano.",
+                    ],
+                },
+                {
+                    id: "compression",
+                    question:
+                        "¿Durante cuánto tiempo debo usar la faja de día y de noche?",
+                    paragraphs: [
+                        "El tiempo de uso depende de tu cirugía, tu evolución y las indicaciones de tu cirujano. No todas las pacientes necesitan usarla durante el mismo número de días ni con el mismo horario.",
+                        "Raquel puede orientarte sobre su colocación y comodidad, respetando siempre la pauta médica. Si la faja te causa dolor, adormecimiento o molestias que dificultan tu descanso, consulta con tu equipo quirúrgico antes de cambiar su ajuste o tiempo de uso.",
+                    ],
+                },
+            ],
+        },
+        en: {
+            title: "Questions about your recovery",
+            description:
+                "Clear answers to help you feel informed and supported.",
+            items: [
+                {
+                    id: "swelling",
+                    question:
+                        "Why am I still swollen after 10 massage sessions?",
+                    paragraphs: [
+                        "Swelling can remain even after 10 sessions. Everyone heals at their own pace, and the number of massages alone does not determine when swelling will go away.",
+                        "Your procedure, time since surgery, and aftercare all play a role. Session frequency and compression garment use should follow your surgeon’s instructions. If swelling increases or you develop new pain, contact your surgical team before continuing.",
+                    ],
+                },
+                {
+                    id: "pain",
+                    question:
+                        "Is pain normal during a post-op massage?",
+                    paragraphs: [
+                        "Your skin and tissues may be sensitive after surgery. However, manual lymphatic drainage uses gentle movements. You should not have to tolerate intense pain for a session to be effective.",
+                        "Let Raquel know how you feel so the session can be adjusted or stopped if needed. There is no set number of sessions for tenderness to resolve. If pain is severe, gets worse, or persists, contact your surgeon.",
+                    ],
+                },
+                {
+                    id: "compression",
+                    question:
+                        "How long should I wear my compression garment, day and night?",
+                    paragraphs: [
+                        "Your wearing schedule depends on your procedure, recovery, and surgeon’s instructions. Not everyone needs to wear a compression garment for the same number of days or hours.",
+                        "Raquel can offer guidance on positioning and comfort while respecting your surgeon’s plan. If your garment causes pain, numbness, or discomfort that disrupts your rest, contact your surgical team before changing its fit or wearing schedule.",
+                    ],
+                },
+            ],
+        },
+    };
+
+    const faq = faqText[lang] ?? faqText.en;
+
     const benefits = [
         { icon: "fa-regular fa-comment", label: text.benefit1 },
         { icon: "fa-regular fa-heart", label: text.benefit2 },
@@ -104,7 +177,42 @@ export default function PostOpCareFrame({lang = 'es'}) {
                         />
                     </div>
 
-                    <div className="col-12 col-xl-6 post-op-action p-3 p-xl-4">
+                    <div className="col-12 post-op-faq p-3 p-xl-4" aria-labelledby="post-op-faq-title" >
+                        <h3 id="post-op-faq-title" className="post-op-faq-title">
+                            {faq.title}
+                        </h3>
+
+                        <p className="post-op-faq-description">
+                            {faq.description}
+                        </p>
+
+                        <div className="post-op-faq-list">
+                            {faq.items.map(({ id, question, paragraphs }) => (
+                                <details
+                                    className="post-op-faq-item"
+                                    key={id}
+                                >
+                                    <summary>
+                                        <span>{question}</span>
+                                        <span
+                                            className="post-op-faq-icon"
+                                            aria-hidden="true"
+                                        />
+                                    </summary>
+
+                                    <div className="post-op-faq-answer">
+                                        {paragraphs.map((paragraph, index) => (
+                                            <p key={`${id}-${index}`}>
+                                                {paragraph}
+                                            </p>
+                                        ))}
+                                    </div>
+                                </details>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="col-12 post-op-action p-3 p-xl-4">
                         <ActionButton
                             href={whatsappUrl}
                             className="w-100"

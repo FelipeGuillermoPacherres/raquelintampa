@@ -29,8 +29,7 @@ const frameText = {
         cardTitle: "Reserva tu cita online",
         cardDescription: "Revisa el total y el adelanto antes de confirmar.",
         button: "Reservar en Square",
-        //newTab: "Se abre en una nueva pestaña.",
-        newTab: "Reservas en línea próximamente.",
+        newTab: "Reserva de forma segura en Square. Se abre en una nueva pestaña.",
         unavailable: "Las reservas online aún no están disponibles.",
         policyTitle: "Cancelaciones y cambios",
         policy: (
@@ -72,8 +71,7 @@ const frameText = {
         cardTitle: "Book your appointment online",
         cardDescription: "Review your total and deposit before you confirm.",
         button: "Book on Square",
-        //newTab: "Opens in a new tab.",
-        newTab: "Online booking coming soon.",
+        newTab: "Book securely through Square. Opens in a new tab.",
         unavailable: "Online booking isn't available yet.",
         policyTitle: "Cancellations and rescheduling",
         policy: (
